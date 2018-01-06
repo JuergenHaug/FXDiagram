@@ -43,18 +43,22 @@ abstract class AbstractLabelOwnerReconcileBehavior<T, SHAPE extends XDomainObjec
 
 	protected def getLabelsDirtyState(AbstractMapping<T> mapping, T domainObject) {
 		val toBeAdded = newArrayList
+		val toBeRemoved = newArrayList
 		compareLabels(mapping, domainObject, new AddKeepRemoveAcceptor {
 			override add(XLabel label) {
 				toBeAdded.add(label)
 			}
 
 			override remove(XLabel label) {
+				toBeRemoved.add(label)
 			}
 
 			override keep(XLabel label) {
 			}
 		})
-		if (!toBeAdded.empty)
+		if(!toBeRemoved.empty)
+			return DANGLING
+		else if (!toBeAdded.empty)
 			return DIRTY
 		else
 			return CLEAN

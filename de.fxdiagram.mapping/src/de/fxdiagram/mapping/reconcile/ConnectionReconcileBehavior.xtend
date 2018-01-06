@@ -22,6 +22,10 @@ class ConnectionReconcileBehavior<T> extends AbstractLabelOwnerReconcileBehavior
 	}
 
 	override getDirtyState() {
+		#[super.dirtyState, getConnectionDirtyState].max
+	}
+	
+	protected def getConnectionDirtyState() {
 		if (host.domainObjectDescriptor instanceof IMappedElementDescriptor<?>) {
 			try {
 				val descriptor = host.domainObjectDescriptor as IMappedElementDescriptor<T>
