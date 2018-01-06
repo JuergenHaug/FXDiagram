@@ -240,7 +240,7 @@ class XConnection extends XDomainObjectShape {
 	}
 	
 	def showControlPoints() {
-		controlPointGroup.visible = true
+		controlPointGroup.visible = root.isInteractive
 	}
 
 	def hideControlPoints() {
