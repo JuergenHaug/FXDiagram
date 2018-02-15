@@ -88,10 +88,10 @@ class XDiagramConfigInterpreter {
 			val descriptor = nodeObject.getDescriptor(nodeMappingCasted)
 			val node = context.getNode(descriptor)
 			if (node != null) {
-				nodeMappingCasted.incoming.filter[onDemand && eagerConnections.contains(mapping)].forEach [
+				nodeMappingCasted.incoming.filter[eagerConnections.contains(mapping)].forEach [
 					execute(nodeObject, [target = node], context)
 				]
-				nodeMappingCasted.outgoing.filter[onDemand && eagerConnections.contains(mapping)].forEach [
+				nodeMappingCasted.outgoing.filter[eagerConnections.contains(mapping)].forEach [
 					execute(nodeObject, [source = node], context)
 				]
 			}
