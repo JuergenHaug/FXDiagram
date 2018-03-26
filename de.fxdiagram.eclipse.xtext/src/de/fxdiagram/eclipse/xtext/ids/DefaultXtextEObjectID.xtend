@@ -53,8 +53,9 @@ class DefaultXtextEObjectID extends AbstractXtextEObjectID {
 		val resourceDescription = resourceServiceProvider.resourceDescriptionManager.
 			getResourceDescription(resource)
 		val eObjectDescriptions = resourceDescription.getExportedObjects(EClass, getQualifiedName(), false)
-		if (eObjectDescriptions.size > 1) 
-			throw new NoSuchElementException('Expected a single element but got ' + eObjectDescriptions.size)
+		// while editing there can be multiple named elements
+//		if (eObjectDescriptions.size > 1) 
+//			throw new NoSuchElementException('Expected a single element but got ' + eObjectDescriptions.size)
 		if(eObjectDescriptions.empty) {
 			if(resource instanceof XtextResource) {
 				val extension qualifiedNameProvider = (resource as XtextResource).resourceServiceProvider.get(IQualifiedNameProvider)
