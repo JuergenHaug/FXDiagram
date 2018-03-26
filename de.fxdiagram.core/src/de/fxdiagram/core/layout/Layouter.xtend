@@ -41,7 +41,7 @@ class Layouter {
 
 	extension KGraphFactory = KGraphFactory.eINSTANCE
 
-	Map<LayoutType, AbstractLayoutProvider> layoutProviders = newHashMap
+	static Map<LayoutType, AbstractLayoutProvider> layoutProviders = newHashMap
 
 	new() {
 		// pre-initialize
