@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature id="de.fxdiagram.sdk.feature">
-      <category name="FXDiagram"/>
-   </feature>
-   <feature id="de.fxdiagram.eclipse.examples.feature">
-      <category name="FXDiagram"/>
-   </feature>
-   <feature id="de.fxdiagram.sdk.feature.source">
-      <category name="FXDiagram"/>
-   </feature>
    <feature id="org.eclipse.fx.ide.basic.feature">
       <category name="FXDiagram.third.party"/>
+   </feature>
+   <feature id="de.fxdiagram.redist.feature">
+      <category name="FXDiagram"/>
    </feature>
    <bundle id="de.cau.cs.kieler.core">
       <category name="FXDiagram.third.party"/>
@@ -31,18 +25,6 @@
       <category name="FXDiagram.third.party"/>
    </bundle>
    <bundle id="de.cau.cs.kieler.kiml.service">
-      <category name="FXDiagram.third.party"/>
-   </bundle>
-   <bundle id="org.eclipse.xtext.example.domainmodel">
-      <category name="FXDiagram.third.party"/>
-   </bundle>
-   <bundle id="org.eclipse.xtext.example.domainmodel.ui">
-      <category name="FXDiagram.third.party"/>
-   </bundle>
-   <bundle id="org.eclipse.xtext.example.fowlerdsl">
-      <category name="FXDiagram.third.party"/>
-   </bundle>
-   <bundle id="org.eclipse.xtext.example.fowlerdsl.ui">
       <category name="FXDiagram.third.party"/>
    </bundle>
    <category-def name="FXDiagram" label="FXDiagram"/>

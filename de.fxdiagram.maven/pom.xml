@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.fxdiagram</groupId>
 	<artifactId>de.fxdiagram.maven</artifactId>
 	<version>0.36.1-SNAPSHOT</version>
 	<properties>
-		<tycho-version>1.0.0</tycho-version>
+		<tycho-version>1.1.0</tycho-version>
 		<xtext-version>2.12.0</xtext-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -14,25 +15,13 @@
 	<modules>
 		<module>../de.fxdiagram.external</module>
 		<module>../de.fxdiagram.annotations</module>
-		<module>../de.fxdiagram.annotations.tests</module>
 		<module>../de.fxdiagram.core</module>
-		<module>../de.fxdiagram.core.tests</module>
-		<module>../de.fxdiagram.examples</module>
 		<module>../de.fxdiagram.lib</module>
 		<module>../de.fxdiagram.mapping</module>
 		<module>../de.fxdiagram.eclipse</module>
-		<module>../de.fxdiagram.eclipse.ecore</module>
-		<module>../de.fxdiagram.eclipse.example</module>
-		<module>../de.fxdiagram.eclipse.examples.feature</module>
-		<module>../de.fxdiagram.eclipse.pde</module>
 		<module>../de.fxdiagram.eclipse.xtext</module>
-		<module>../de.fxdiagram.noeclipse</module>
 		<module>../../JavaFX-SWT-Gesture-Bridge/de.fxdiagram.swtfx</module>
-		<module>../de.fxdiagram.xtext.domainmodel</module>
-		<module>../de.fxdiagram.xtext.fowlerdsl</module>
-		<module>../de.fxdiagram.xtext.xbase</module>
-		<module>../de.fxdiagram.base.feature</module>
-		<module>../de.fxdiagram.sdk.feature</module>
+		<module>../de.fxdiagram.redist.feature</module>
 		<module>../de.fxdiagram.eclipse.updatesite</module>
 	</modules>
 
@@ -91,6 +80,13 @@
 				<groupId>org.eclipse.xtend</groupId>
 				<artifactId>xtend-maven-plugin</artifactId>
 				<version>${xtext-version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.eclipse.platform</groupId>
+						<artifactId>org.eclipse.equinox.common</artifactId>
+						<version>3.10.0</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
@@ -145,7 +141,7 @@
 				<version>${tycho-version}</version>
 				<configuration>
 					<excludes>
-						<feature id="org.eclipse.fx.ide.basic.feature"/>
+						<feature id="org.eclipse.fx.ide.basic.feature" />
 					</excludes>
 				</configuration>
 				<executions>
@@ -274,7 +270,7 @@
 			<artifactId>javafx.embedd.swt</artifactId>
 			<version>8.0.0-SNAPSHOT</version>
 			<scope>system</scope>
-    			<systemPath>${java.home}/lib/jfxswt.jar</systemPath>
+			<systemPath>${java.home}/lib/jfxswt.jar</systemPath>
 		</dependency>
 	</dependencies>
 
@@ -288,7 +284,7 @@
 			</activation>
 			<properties>
 				<mirroring>prepapare-package</mirroring>
-			</properties>			
+			</properties>
 		</profile>
 	</profiles>
 </project>
